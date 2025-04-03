@@ -13,6 +13,7 @@ TERMUX_PKG_GIT_BRANCH=main
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_BUILD_DEPENDS="ldc, binutils-cross"
 TERMUX_PKG_DEPENDS="libandroid-execinfo, libimobiledevice, libplist, libusbmuxd"
+TERMUX_PKG_BLACKLISTED_ARCHES="arm, i686"
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS=":cli-frontend"
 
 termux_step_configure() {
