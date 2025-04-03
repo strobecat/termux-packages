@@ -1,0 +1,12 @@
+diff --git a/frontends/cli/source/getpass.c b/frontends/cli/source/getpass.c
+new file mode 100644
+index 0000000..76ab7fc
+--- /dev/null
++++ b/frontends/cli/source/getpass.c
+@@ -0,0 +1,6 @@
++#include <unistd.h>
++
++char* getpass_wrapper(const char* prompt)
++{
++  return getpass(prompt);
++}

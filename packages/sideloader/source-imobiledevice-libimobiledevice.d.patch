@@ -1,0 +1,13 @@
+diff --git a/source/imobiledevice/libimobiledevice.d b/source/imobiledevice/libimobiledevice.d
+index 097d99d..b2da612 100644
+--- a/source/imobiledevice/libimobiledevice.d
++++ b/source/imobiledevice/libimobiledevice.d
+@@ -11,7 +11,7 @@ version (Windows) {
+ } else version (OSX) {
+     enum libimobiledevice = LibImport("libimobiledevice-1.0.6.dylib");
+ } else {
+-    enum libimobiledevice = LibImport("libimobiledevice-1.0.so.6", "libimobiledevice.so.1");
++    enum libimobiledevice = LibImport("libimobiledevice-1.0.so.6", "libimobiledevice.so.1", "libimobiledevice-1.0.so");
+ }
+ 
+ mixin makeBindings;

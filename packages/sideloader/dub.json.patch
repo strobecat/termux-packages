@@ -1,0 +1,12 @@
+diff --git a/dub.json b/dub.json
+index 690cd16..412c241 100644
+--- a/dub.json
++++ b/dub.json
+@@ -9,6 +9,7 @@
+     "stringImportPaths": ["resources/"],
+ 
+     "buildRequirements": ["allowWarnings", "requireBoundsCheck"],
++    "dflags": ["-preview=shortenedMethods", "-L=-landroid-execinfo"],
+ 
+     "dependencies": {
+         "botan": "~>1.13",

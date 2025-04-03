@@ -1,0 +1,21 @@
+diff --git a/frontends/cli/source/cli_frontend.d b/frontends/cli/source/cli_frontend.d
+index 8cc3968..39d159e 100644
+--- a/frontends/cli/source/cli_frontend.d
++++ b/frontends/cli/source/cli_frontend.d
+@@ -88,14 +88,14 @@ auto readCertificate(string path) {
+     return X509Certificate(path, false);
+ }
+ 
+-extern(C) char* getpass(const(char)* prompt);
++extern(C) char* getpass_wrapper(const(char)* prompt);
+ 
+ string readPasswordLine(string prompt) {
+     version (Windows) {
+         write(prompt.toStringz(), " [/!\\ The password will appear in clear text in the terminal]: ");
+         return readln().chomp();
+     } else {
+-        return fromStringz(cast(immutable) getpass(prompt.toStringz()));
++        return fromStringz(cast(immutable) getpass_wrapper(prompt.toStringz()));
+     }
+ }
+ 

@@ -1,0 +1,17 @@
+diff --git a/frontends/cli/dub.json b/frontends/cli/dub.json
+index 9facc58..f97325d 100644
+--- a/frontends/cli/dub.json
++++ b/frontends/cli/dub.json
+@@ -7,6 +7,12 @@
+     "sourcePaths": [
+         "source/"
+     ],
++    "preBuildCommands": [
++        "$CC -Os -c source/getpass.c -o getpass.o"
++    ],
++    "sourceFiles": [
++        "getpass.o"
++    ],
+ 
+     "dependencies": {
+         "sideloader": { "path": "../../" },
