@@ -51,6 +51,9 @@ mkdir -p "$TERMUX_PKG_TMPDIR"
 (. "$TERMUX_SCRIPTDIR"/scripts/build/setup/termux_setup_golang.sh
 	termux_setup_golang
 )
+(. "$TERMUX_SCRIPTDIR"/scripts/build/setup/termux_setup_ldc.sh
+	termux_setup_ldc
+)
 (
 	. "$TERMUX_SCRIPTDIR"/scripts/build/setup/termux_setup_ninja.sh
 	. "$TERMUX_SCRIPTDIR"/scripts/build/setup/termux_setup_meson.sh
