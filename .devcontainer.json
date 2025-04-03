@@ -1,0 +1,20 @@
+{
+    "image": "ghcr.io/termux/package-builder",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "builder",
+            "userUid": "1001",
+            "userGid": "1001",
+            "upgradePackages": "true"
+        },
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest"
+        }
+    },
+    "runArgs": [
+        "--device /dev/fuse",
+        "--cap-add SYS_ADMIN"
+    ],
+    "remoteUser": "builder"
+}
