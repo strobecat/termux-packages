@@ -1,0 +1,16 @@
+{
+    "image": "ghcr.io/termux/package-builder",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "builder",
+            "userUid": "1001",
+            "userGid": "1001",
+            "upgradePackages": "true"
+        },
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest"
+        }
+    },
+    "remoteUser": "builder"
+}
