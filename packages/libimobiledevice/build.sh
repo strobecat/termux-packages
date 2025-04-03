@@ -1,12 +1,12 @@
 TERMUX_PKG_HOMEPAGE=https://libimobiledevice.org/
 TERMUX_PKG_DESCRIPTION="A library to communicate with services on iOS devices using native protocols"
 TERMUX_PKG_LICENSE="LGPL-2.1-or-later"
-_COMMIT=c8cdf20fe20b0c46ed7d9a9386bed03301ddbfa5
-_COMMIT_DATE=20241202
+_COMMIT=a6b6c35d1550acbd2552d49c2fe38115deec8fc0
+_COMMIT_DATE=20250228
 TERMUX_PKG_MAINTAINER="@xunmod"
 TERMUX_PKG_VERSION=1.3.0-p${_COMMIT_DATE}
 TERMUX_PKG_SRCURL=git+https://github.com/libimobiledevice/libimobiledevice
-TERMUX_PKG_SHA256=d76e27224b2bc9bf1226bc88ba53e5f82a32470d720f85c40aff35b96593a5a4
+TERMUX_PKG_SHA256=262a9c35252bf1418de40454268cfd958012c25aab8b6f8067673717b9db9e42
 TERMUX_PKG_GIT_BRANCH=master
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_DEPENDS="libimobiledevice-glue, libplist, libtatsu, libusbmuxd, openssl"
