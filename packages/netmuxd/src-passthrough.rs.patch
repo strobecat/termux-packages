@@ -1,0 +1,13 @@
+diff --git a/src/passthrough.rs b/src/passthrough.rs
+index 7aba76c..b9eb204 100644
+--- a/src/passthrough.rs
++++ b/src/passthrough.rs
+@@ -49,7 +49,7 @@ async fn main() {
+         };
+ 
+         // Dial the unix socket
+-        let mut unix_socket = match tokio::net::UnixStream::connect("/var/run/usbmuxd").await {
++        let mut unix_socket = match tokio::net::UnixStream::connect("@TERMUX_PREFIX@/var/run/usbmuxd").await {
+             Ok(s) => s,
+             Err(e) => {
+                 println!("Error connecting to unix socket: {}", e);

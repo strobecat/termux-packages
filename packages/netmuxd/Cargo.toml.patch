@@ -1,0 +1,12 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index a79cad4..6fd53c2 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -29,7 +29,6 @@ rusb = { version = "0.9.1", optional = true }
+ libusb1-sys = { version = "0.6.2", optional = true }
+ 
+ [features]
+-default = ["static", "vendored"]
+ static = ["rusty_libimobiledevice/static", "plist_plus/static"]
+ usb = ["libusb1-sys", "rusb"]
+ vendored = ["rusty_libimobiledevice/vendored", "plist_plus/vendored"]

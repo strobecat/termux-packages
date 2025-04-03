@@ -1,0 +1,12 @@
+diff --git a/src/devices.rs b/src/devices.rs
+index 86ca581..e52c2d7 100644
+--- a/src/devices.rs
++++ b/src/devices.rs
+@@ -45,6 +45,7 @@ impl SharedDevices {
+             match std::env::consts::OS {
+                 "macos" => "/var/db/lockdown",
+                 "linux" => "/var/lib/lockdown",
++                "android" => "@TERMUX_PREFIX@/var/lib/lockdown",
+                 "windows" => "C:/ProgramData/Apple/Lockdown",
+                 _ => panic!("Unsupported OS, specify a path"),
+             }
