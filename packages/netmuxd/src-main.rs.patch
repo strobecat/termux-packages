@@ -1,8 +1,8 @@
 diff --git a/src/main.rs b/src/main.rs
-index a896df0..362799c 100644
+index f6bdd5b..5ab9ef6 100644
 --- a/src/main.rs
 +++ b/src/main.rs
-@@ -138,15 +138,15 @@ async fn main() {
+@@ -146,17 +146,17 @@ async fn main() {
          tokio::spawn(async move {
              // Delete old Unix socket
              info!("Deleting old Unix socket");
@@ -10,12 +10,14 @@ index a896df0..362799c 100644
 +            std::fs::remove_file("@TERMUX_PREFIX@/var/run/usbmuxd").unwrap_or_default();
              // Create UnixListener
              info!("Binding to new Unix socket");
--            let listener = tokio::net::UnixListener::bind("/var/run/usbmuxd").unwrap();
-+            let listener = tokio::net::UnixListener::bind("@TERMUX_PREFIX@/var/run/usbmuxd").unwrap();
+-            let listener = tokio::net::UnixListener::bind("/var/run/usbmuxd")
++            let listener = tokio::net::UnixListener::bind("@TERMUX_PREFIX@/var/run/usbmuxd")
+                 .expect("Unable to bind to unix socket");
              // Change the permission of the socket
              info!("Changing permissions of socket");
--            fs::set_permissions("/var/run/usbmuxd", fs::Permissions::from_mode(0o666)).unwrap();
-+            fs::set_permissions("@TERMUX_PREFIX@/var/run/usbmuxd", fs::Permissions::from_mode(0o666)).unwrap();
+-            fs::set_permissions("/var/run/usbmuxd", fs::Permissions::from_mode(0o666))
++            fs::set_permissions("@TERMUX_PREFIX@/var/run/usbmuxd", fs::Permissions::from_mode(0o666))
+                 .expect("Unable to set socket file permissions");
  
 -            println!("Listening on /var/run/usbmuxd");
 +            println!("Listening on @TERMUX_PREFIX@/var/run/usbmuxd");
