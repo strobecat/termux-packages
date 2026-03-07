@@ -13,8 +13,9 @@
         }
     },
     "runArgs": [
-        "--device /dev/fuse",
-        "--cap-add SYS_ADMIN"
+        "--cap-add=SYS_ADMIN",
+        "--device",
+        "/dev/fuse"
     ],
     "remoteUser": "builder"
 }
